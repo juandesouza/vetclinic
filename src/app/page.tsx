@@ -44,13 +44,14 @@ export default function Home() {
       <main id="home" className="flex-1">
         {/* Hero Section */}
         <section className="relative">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-green-600 via-green-500 to-blue-600">
-            <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 -z-10">
+            <Image src="/images/hero-animals-fun.jpg" alt="Animals having fun" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-br from-green-600/80 via-green-500/80 to-blue-600/80" />
           </div>
           <div className="max-w-6xl mx-auto px-4 py-20 sm:py-28 md:py-32 text-white grid md:grid-cols-2 gap-10">
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                Caring for Your Family’s Pets with Love and Expertise.
+                Caring for Your Family's Pets with Love and Expertise.
               </h1>
               <p className="mt-4 text-white/90 text-base md:text-lg">
                 Professional veterinary care for every member of your furry family.
@@ -80,11 +81,11 @@ export default function Home() {
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { img: "/images/service-consult.jpg", title: "Consultations", desc: "Comprehensive health assessments.", price: "R$150" },
-              { img: "/images/service-vaccine.jpg", title: "Vaccinations", desc: "Core and optional vaccines.", price: "from R$100" },
+              { img: "/images/service-vaccine-new.jpg", title: "Vaccinations", desc: "Core and optional vaccines.", price: "from R$100" },
               { img: "/images/service-checkup.jpg", title: "Check-up", desc: "Routine wellness exams.", price: "R$120" },
               { img: "/images/service-groom.jpg", title: "Grooming", desc: "Bathing, trimming, and more.", price: "R$120" },
-              { img: "/images/service-surgery.jpg", title: "Surgery", desc: "Safe procedures with care.", price: "Ask us" },
-              { img: "/images/service-dental.jpg", title: "Dental Care", desc: "Cleanings and oral health.", price: "Ask us" },
+              { img: "/images/service-vaccine.jpg", title: "Surgery", desc: "Safe procedures with care.", price: "Ask us" },
+              { img: "/images/service-dental-new.jpg", title: "Dental Care", desc: "Cleanings and oral health.", price: "Ask us" },
             ].map((s) => (
               <Card key={s.title} className="overflow-hidden">
                 <div className="relative h-40">
