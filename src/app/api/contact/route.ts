@@ -57,7 +57,11 @@ export async function POST(req: NextRequest) {
 
     // Only redirect if Resend accepted the message and returned an id
     if (data?.id) {
-      return NextResponse.redirect(new URL("/thank-you", req.url), { status: 303 });
+      // Extract locale from referer or default to 'en'
+      const referer = req.headers.get('referer') || '';
+      const localeMatch = referer.match(/\/(en|es|pt)(?:\/|$)/);
+      const locale = localeMatch ? localeMatch[1] : 'en';
+      return NextResponse.redirect(new URL(`/${locale}/thank-you`, req.url), { status: 303 });
     }
 
     // Fallback, should be rare
