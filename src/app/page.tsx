@@ -51,7 +51,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 py-20 sm:py-28 md:py-32 text-white grid md:grid-cols-2 gap-10">
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                Caring for Your Family's Pets with Love and Expertise.
+                Caring for Your Family&apos;s Pets with Love and Expertise.
               </h1>
               <p className="mt-4 text-white/90 text-base md:text-lg">
                 Professional veterinary care for every member of your furry family.

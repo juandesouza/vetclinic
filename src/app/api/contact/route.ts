@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
       subject: "New Appointment Request",
       html,
       reply_to: email,
-    } as any);
+    });
 
     // Log for observability on the server (visible in server logs/Vercel logs)
     if (error) {
