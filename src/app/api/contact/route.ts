@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       to: [String(process.env.CONTACT_TO_EMAIL)],
       subject: "New Appointment Request",
       html,
-      reply_to: email,
+      replyTo: email,
     });
 
     // Log for observability on the server (visible in server logs/Vercel logs)
