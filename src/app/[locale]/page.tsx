@@ -6,10 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { getMessages, isValidLocale, defaultLocale, type Locale } from "@/i18n";
+import { getMessages, isValidLocale, defaultLocale } from "@/i18n";
 
-export default function Home({ params }: { params: { locale: string } }) {
-  const locale = isValidLocale(params.locale) ? params.locale : defaultLocale;
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: localeParam } = await params;
+  const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getMessages(locale);
 
   return (

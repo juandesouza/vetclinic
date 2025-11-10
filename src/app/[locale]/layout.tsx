@@ -1,14 +1,15 @@
-import { isValidLocale, defaultLocale, type Locale } from "@/i18n";
+import { isValidLocale, defaultLocale } from "@/i18n";
 import { LocaleScript } from "@/components/LocaleScript";
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
-  const locale = isValidLocale(params.locale) ? params.locale : defaultLocale;
+  const { locale: localeParam } = await params;
+  const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   
   return (
     <>

@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { getMessages, isValidLocale, defaultLocale, type Locale } from "@/i18n";
+import { getMessages, isValidLocale, defaultLocale } from "@/i18n";
 
-export default function ThankYou({ params }: { params: { locale: string } }) {
-  const locale = isValidLocale(params.locale) ? params.locale : defaultLocale;
+export default async function ThankYou({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: localeParam } = await params;
+  const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getMessages(locale);
 
   return (
